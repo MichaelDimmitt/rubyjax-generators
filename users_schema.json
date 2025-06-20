@@ -5,5 +5,7 @@
     {"name": "first_name", "type": "string"},
     {"name": "last_name", "type": "string"}
   ],
-  "primary_field": "email"
+  "primary_field": "email",
+  "command": "scaffold",
+  "//":  "rails generate scaffold Post name:string title:string content:text"
 }
