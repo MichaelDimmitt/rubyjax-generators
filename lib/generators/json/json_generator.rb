@@ -14,8 +14,15 @@ class JsonGenerator < Rails::Generators::Base
   end
 
   def create_generator
-    generate "#{@command} User title:string"
-    # hook_for :test_framework, in: :rails, as: :controller
+    querystr = ''
+    @json_config["columns"].each do |column|
+      querystr << "#{column["name"]}:#{column["type"]} "
+    end
+    generate "#{@command} #{@model_name} #{querystr}"
+    # Example output: generate "scaffold User email:string first_name:string last_name:string"
+
+    # Unused alternative method:
+    # hook_for :scaffold_controller, in: :rails, as: :controller
   end
 
 end

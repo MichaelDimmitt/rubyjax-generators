@@ -7,5 +7,5 @@
   ],
   "primary_field": "email",
   "command": "scaffold",
-  "//":  "rails generate scaffold Post name:string title:string content:text"
+  "//exampleoutput":  "scaffold User email:string first_name:string last_name:string"
 }
